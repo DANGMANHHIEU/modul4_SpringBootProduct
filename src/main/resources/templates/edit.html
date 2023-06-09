@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Product</title>
+</head>
+<body>
+<h1>Edit Product</h1>
+<p>
+  <a href="/product">Product list</a>
+</p>
+<h3 th:if="${message}">
+  <p th:text="${message}"></p>
+</h3>
+<form th:action="@{/edit}" th:object="${product}" method="post">
+  <input th:type="hidden" name="id" th:field="*{id}">
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td><input type="text" th:field="*{nameProduct}"/></td>
+    </tr>
+    <tr>
+      <td>Price:</td>
+      <td><input type="text" th:field="*{priceProduct}"/></td>
+    </tr>
+    <tr>
+      <td>Product Description:</td>
+      <td><input type="text" th:field="*{descriptionProduct}"/></td>
+    </tr>
+    <tr>
+      <td>Producer:</td>
+      <td><input type="text" th:field="*{producer}"/></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="submit" value="Update Product"></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

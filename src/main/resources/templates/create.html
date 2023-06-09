@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Product</title>
+</head>
+<body>
+<h1>Create Product</h1>
+<p>
+  <a href="/product">Product list</a>
+</p>
+<th:block th:if="${message}">
+  <p th:text="${message}"></p>
+</th:block>
+<form th:action="@{/create-product}" th:object="${product}" method="post">
+  <table>
+    <tr>
+      <td>Name</td>
+      <td><input type="text" th:field="*{nameProduct}"/></td>
+    </tr>
+    <tr>
+      <td>Price:</td>
+      <td><input type="text" th:field="*{priceProduct}"/></td>
+    </tr>
+    <tr>
+      <td>Product Description:</td>
+      <td><input type="text" th:field="*{descriptionProduct}"/></td>
+    </tr>
+    <tr>
+      <td>Producer:</td>
+      <td><input type="text" th:field="*{producer}"/></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="submit" value="Create Product"></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
